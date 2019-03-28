@@ -52,38 +52,22 @@ async function getAllStatuses(taskIds){
     return await Promise.all(statuses);
 }
 
-/*
-function get_status(task_id)
-{
-    $.get("/web/status?task_id=" + task_id, function(data) {
-        if (data.ready) {
-            $("i").hide();
-            console.log(data)
-            
-        } else {
-            $("i").show();
-            setTimeout(get_status, 1000, task_id);
-        }
-      });
-}
-*/
-
 var template = `
 {{#api_result}}
     <tr>
-        <th><b>Имя файла</b></th>
-        <th><b>Имена ученых</b></th>
-        <th><b>Тематика</b></th>
-        <th><b>Ридабилити</b></th>
-        <th><b>Термины</b></th>
+    <th><b>Имя файла</b></th>
+    <th><b>Имена ученых</b></th>
+    <th><b>Тематика</b></th>
+    <th><b>Ридабилити</b></th>
+    <th><b>Термины</b></th>
     </tr>
     <tr>
-        <td>{{file}}</td>
-        <td>{{ner}}</td>
-        <td>{{topic}}</td>
-        <td>{{rb}}</td>
-        <td>{{term}}</td>
-    </tr> 
+    <td>{{file}}</td>
+    <td>{{ner}}</td>
+    <td>{{topic}}</td>
+    <td>{{rb}}</td>
+    <td>{{term}}</td> 
+    </tr>
 {{/api_result}}
 `;
 
